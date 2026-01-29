@@ -1,0 +1,64 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(232, 232, 232);
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  padding: 0 10px;
+  position: sticky;
+  top:0;
+}
+
+.logo-container{
+  margin-left: 10px;
+}
+.logo{
+  width: 120px;
+}
+.header-middle-section{
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+}
+.menu{
+  margin: 0 10px;
+  font-family: arial;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s linear;
+}
+.menu::after{
+  content: '';
+  background-color: gray;
+  margin-top: 2px;
+  height: 3px;
+  width: 0px;
+  display: block;
+  border-radius: 10px;
+  transition: width .2s linear;
+}
+.menu:hover::after{
+  width: 40px;
+}
+.menu:hover{
+  color: gray;
+}
+
+.cart-button{
+  border: none;
+  border-radius: 30px;
+  width: 70px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+.cart-image{
+  width: 50px;
+}
