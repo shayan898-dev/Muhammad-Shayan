@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RAVYN watches</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Styles/header-footer.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.min.css">
+  <style>
+    body{
+      font-family: arial;
+    }
+    .prodetails {
+          display: flex;
+          margin-top: 100px;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding: 0 80px;
+          /*box-shadow: 10px 10px 50px black;*/
+          border-radius: 20px;
+          background-color: transparent ;
+      }
+      .single-pro-image { width: 40%; margin-right: 50px; }
+      .single-pro-details { width: 50%; padding-top: 30px; }
+      .single-pro-details input {
+         width: 50px;
+         height: 35px;
+         padding-left: 10px;
+         font-size: 16px;
+         margin-right: 10px;
+        }
+      .single-pro-details button { 
+        background: #088178;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+      
+      /* Classes for JS targeting (optional styling) */
+      .pro-name { font-size: 24px; margin-bottom: 10px; }
+      .pro-price { font-size: 26px; font-weight: bold; }
+      .pro-desc { line-height: 25px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <a href="./index.html"><h1>RAVYN</h1></a>
+    </div>
+    <div class="header-right-section">
+        <p class="menu">Home</p>
+        <p class="menu">About</p>
+        <p class="menu">Contact</p>
+        <i class="fa fa-window-close" id="close" aria-hidden="true"></i>
+    </div>
+    <div class="mobile">
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>    
+  </header>
+
+  <section class="prodetails">
+        <div class="single-pro-image">
+            <img src="" width="400px" class="main-img" alt="Product Image">
+        </div>
+        
+        <div class="single-pro-details">
+            <h6>Home / Watches</h6>
+            
+            <h4 class="pro-name">Loading...</h4>
+            <h2 class="pro-price">Loading...</h2>
+            
+            <input type="number" value="1">
+            <button class="add-cart-btn">Add To Cart</button>
+            
+            <h4>Product Details</h4>
+            <span class="pro-desc">Loading...</span>
+        </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-left-section">
+        <h1>RAVYN</h1>
+        <p class="footer-text">RAVYN Watches brings premium timepieces crafted for elegance, precision, and everyday style.</p>
+    </div>
+    <div class="footer-middle-section">
+      <h2>Quick Links</h2>
+      <div class="links">
+        <a href="youtube.com"><p>Home</p></a>
+        <a><p>About</p></a>
+        <a><p>Store</p></a>
+      </div>
+    </div>
+    <div class="footer-right-section">
+      <h2>Social</h2>
+      <div class="social-link">
+        <p><strong>Address: <br></strong> Sargodha , Pakistan</p>
+        <p><strong>Phone: <br></strong> +92-399-99999</p>
+        <p><strong>Email: <br></strong> info@support.com</p>
+      </div>
+      <div class="social-icon">
+        <i class="fa-brands fa-tiktok"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+    </div>
+  </footer>
+  <script src="./Script/data.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
+    const product = products.find(p => p.id === productId);
+
+    if (product) {
+      // querySelector finds the first element with this class
+      document.querySelector('.main-img').src = product.image;
+      document.querySelector('.pro-name').innerText = product.name;
+      document.querySelector('.pro-price').innerText = "Rs " + product.price + "/-";
+      document.querySelector('.pro-desc').innerText = product.des;
+    } else {
+      document.querySelector('.single-pro-details').innerHTML = "<h2>Product Not Found</h2>";
+    }
+
+  </script>
+</body>
+</html>

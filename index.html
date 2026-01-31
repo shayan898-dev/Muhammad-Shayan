@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RAVYN watches</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Styles/header-footer.css">
+  <link rel="stylesheet" href="./Styles/home.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-container">
+      <h1>RAVYN</h1>
+    </div>
+    <div class="header-right-section">
+        <p class="menu">Home</p>
+        <p class="menu">About</p>
+        <p class="menu">Contact</p>
+        <i class="fa fa-window-close" id="close" aria-hidden="true"></i>
+    </div>
+    <div class="mobile">
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>    
+  </header>
+  <section class="hero-section">
+    <div class="hero-left">
+      <h2>Timeless Masterpieces, Crafted for Elite</h2>
+      <h4>Time is All We Have - Wear a Watch that matches Your Style and Legacy</h4>
+      <button>Explore More</button>
+    </div>
+  </section>
+  <section class="feature">
+    <div class="group">
+      <div class="fe">
+        <img src="./Images/feature images/free-delivery.png" class="fe-image">
+        <h4>Free Shipping</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/happy-sell.png" class="fe-image">
+        <h4>Happy Selling</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/online-order.png" class="fe-image">
+        <h4>Online Order</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/save-money.png" class="fe-image">
+        <h4>Save Money</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/24-7.png" class="fe-image">
+        <h4>24 / 7 Service</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/free-delivery.png" class="fe-image">
+        <h4>Free Shipping</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/happy-sell.png" class="fe-image">
+        <h4>Happy Selling</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/online-order.png" class="fe-image">
+        <h4>Online Order</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/save-money.png" class="fe-image">
+        <h4>Save Money</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/24-7.png" class="fe-image">
+        <h4>24 / 7 Service</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/free-delivery.png" class="fe-image">
+        <h4>Free Shipping</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/happy-sell.png" class="fe-image">
+        <h4>Happy Selling</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/online-order.png" class="fe-image">
+        <h4>Online Order</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/save-money.png" class="fe-image">
+        <h4>Save Money</h4>
+      </div>
+      <div class="fe">
+        <img src="./Images/feature images/24-7.png" class="fe-image">
+        <h4>24 / 7 Service</h4>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="fe-products">
+    <h1 class="product-heading">Featured Products</h1>
+    <section class="products-grid js-product-grid">
+    </section>
+  </section>
+  <footer class="footer">
+    <div class="footer-left-section">
+        <h1>RAVYN</h1>
+        <p class="footer-text">RAVYN Watches brings premium timepieces crafted for elegance, precision, and everyday style.</p>
+    </div>
+    <div class="footer-middle-section">
+      <h2>Quick Links</h2>
+      <div class="links">
+        <a href="youtube.com"><p>Home</p></a>
+        <a><p>About</p></a>
+        <a><p>Store</p></a>
+      </div>
+    </div>
+    <div class="footer-right-section">
+      <h2>Social</h2>
+      <div class="social-link">
+        <p><strong>Address: <br></strong> Sargodha , Pakistan</p>
+        <p><strong>Phone: <br></strong> +92-399-99999</p>
+        <p><strong>Email: <br></strong> info@support.com</p>
+      </div>
+      <div class="social-icon">
+        <i class="fa-brands fa-tiktok"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+        
+    </div>
+
+
+  </footer>
+  <script src="./Script/data.js"></script>
+  <script>
+    const bar = document.getElementById('bar');
+      const nav = document.querySelector('.header-right-section');
+      const close = document.getElementById('close');
+      if (bar) {
+        bar.addEventListener('click' , () => {
+          nav.classList.add('active');
+        })
+      }
+      if (close){
+        close.addEventListener('click' , () => {
+          nav.classList.remove('active');
+        })
+      }
+
+      let productHTML = '';
+
+      products.forEach((product) => {
+        productHTML += `
+          <div class="products js-product"
+          onclick="window.location.href='Product-detail.html?id=${product.id}'"
+          >
+            <div class="products-top">
+              <img class="product-image" src="${product.image}">
+            </div>
+            <div class="product-bottom">
+              <p class="product-owner">RAVYN Watches</p>
+              <h2 class="product-name">${product.name}</h2>
+              <h4 class="product-price">Rs ${product.price}/-</h4>
+              <button class="js-buy-button">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </button>
+            </div>
+          </div>
+        `
+      });
+
+      document.querySelector('.js-product-grid').innerHTML = productHTML;
+
+
+  </script>
+</body>
+</html>
